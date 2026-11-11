@@ -61,6 +61,7 @@ export default function App() {
     <main className="app">
       <AddToDoForm onAdd={addTodo}/>
       <div>
+    /* These 3 buttons were ai generated */
         <button onClick={() => setFilter("all")} disabled={filter === "all"}>
           All
         </button>
