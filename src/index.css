@@ -84,26 +84,3 @@ h1 {
 .empty {
   color: #616e7c;
 }
-
-.filters {
-  display: flex;
-  gap: 0.4rem;
-  margin-bottom: 0.75rem;
-}
-
-.filters button {
-  padding: 0.3rem 0.75rem;
-  border: 1px solid #cbd2d9;
-  border-radius: 999px;
-  background: #fff;
-  font: inherit;
-  font-size: 0.85rem;
-  color: #3e4c59;
-  cursor: pointer;
-}
-
-.filters button.active {
-  background: #3e4c59;
-  color: #fff;
-  border-color: #3e4c59;
-}

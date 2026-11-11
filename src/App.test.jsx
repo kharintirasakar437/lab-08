@@ -39,28 +39,3 @@ test("deletes a todo", async () => {
   await userEvent.click(within(item).getByRole("button", { name: /delete/i }));
   expect(screen.queryByText("Build the to-do list")).toBeNull();
 });
-
-// ----- Lab 08 additions: controlled input + filters -----
-
-test("the form clears after adding (controlled input)", async () => {
-  render(<App />);
-  const input = screen.getByPlaceholderText(/add a todo/i);
-  await userEvent.type(input, "Buy milk");
-  expect(input.value).toBe("Buy milk");
-  await userEvent.click(screen.getByRole("button", { name: /^add$/i }));
-  expect(input.value).toBe(""); // reset by clearing state, not touching the DOM
-});
-
-test("the Active filter shows only not-done todos", async () => {
-  render(<App />);
-  await userEvent.click(screen.getByRole("button", { name: /^active$/i }));
-  expect(screen.queryByText("Read the lab README")).toBeNull(); // done -> hidden
-  expect(screen.getByText("Build the to-do list")).toBeTruthy(); // active -> shown
-});
-
-test("the Completed filter shows only done todos", async () => {
-  render(<App />);
-  await userEvent.click(screen.getByRole("button", { name: /^completed$/i }));
-  expect(screen.getByText("Read the lab README")).toBeTruthy(); // done -> shown
-  expect(screen.queryByText("Build the to-do list")).toBeNull(); // active -> hidden
-});

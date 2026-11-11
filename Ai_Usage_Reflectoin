@@ -1,0 +1,11 @@
+OVerall I learend how reacts can be used to make compoentnts work more smoothly and in sync. I used ai to generate to complete button. Other than that ai was usedd to explain concepts not direclty generate any code /* These 3 buttons were ai generated */
+        <button onClick={() => setFilter("all")} disabled={filter === "all"}>
+          All
+        </button>
+        <button onClick={() => setFilter("active")} disabled={filter === "active"}>
+          Active
+        </button>
+        <button onClick={() => setFilter("completed")} disabled={filter === "completed"}>
+          Completed
+        </button>
+    
